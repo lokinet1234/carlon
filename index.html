@@ -235,6 +235,44 @@
       margin: 4px 0 0 0;
     }
 
+    .amendment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .amendment-item {
+      padding: 24px;
+      border-radius: 4px;
+      border: 1px solid #e0e0e0;
+      background: var(--background);
+      min-height: 180px;
+      display: grid;
+      align-content: start;
+    }
+
+    .amendment-number {
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--primary-color);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .amendment-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .amendment-description {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
     .publications-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -296,6 +334,9 @@
       .violation-item {
         margin-right: 0;
       }
+      .amendment-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 480px) {
@@ -320,6 +361,10 @@
       }
       .timeline-item {
         padding-left: 50px;
+      }
+      .amendment-item {
+        min-height: 150px;
+        padding: 16px;
       }
     }
   </style>
@@ -409,7 +454,7 @@
         </div>
         <div class="opinion dissent">
           <h4>Dissenting Opinion</h4>
-          <p>I cannot agree as would justify an arrest or conviction for disorderly conduct. On the contrary, I think that the policeman's action was a "deliberate defiance" of ordinary official duty as well as of the constitutional right of free speech.</p>
+          <p>Justice Black argued that police must first protect the speaker's constitutional right to talk, even from a hostile crowd. Silencing the speaker gives a "heckler's veto" to the most intolerant listeners.</p>
         </div>
         <div class="case-timeline">
           <h4>Feiner v. New York Timeline</h4>
