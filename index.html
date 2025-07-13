@@ -403,19 +403,43 @@
       margin: 0;
     }
 
-    /* Violations Grid */
+    /* Violations Marquee */
     .violations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
       margin: 48px 0;
+      width: 100%;
+      position: relative;
+    }
+
+    .violations-marquee {
+      display: flex;
+      flex-wrap: nowrap;
+      animation: marquee 30s linear infinite;
+      will-change: transform;
+    }
+
+    .violations-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .violation-item {
+      flex: 0 0 300px;
       padding: 32px;
       background: #f8f8f8;
       border-radius: 4px;
       min-height: 180px;
+      margin-right: 32px;
       display: grid;
       align-content: start;
     }
@@ -761,7 +785,20 @@
         gap: 24px;
       }
 
-      .violations-grid,
+      .violations-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .violations-marquee {
+        animation: none;
+      }
+
+      .violation-item {
+        margin-right: 0;
+      }
+
       .publications-grid,
       .concept-grid,
       .amendment-grid {
@@ -1091,19 +1128,21 @@
             fundamental rights.
           </p>
           <div class="violations-grid">
-            <div class="violation-item">
-              <h4>Notice Rights</h4>
-              <p>Plaintiff initiated hearings without proper notice, denying the defendant opportunity to prepare.</p>
-            </div>
-            <div class="violation-item">
-              <h4>Vague Allegations</h4>
-              <p>
-                Petition relied on general comments without dates, times, or places—insufficient for cause of action.
-              </p>
-            </div>
-            <div class="violation-item">
-              <h4>Meaningful Hearing</h4>
-              <p>Court's failure to inquire into disputed facts deprived defendant of constitutional protections.</p>
+            <div class="violations-marquee">
+              <div class="violation-item">
+                <h4>Notice Rights</h4>
+                <p>Plaintiff initiated hearings without proper notice, denying the defendant opportunity to prepare.</p>
+              </div>
+              <div class="violation-item">
+                <h4>Vague Allegations</h4>
+                <p>
+                  Petition relied on general comments without dates, times, or places—insufficient for cause of action.
+                </p>
+              </div>
+              <div class="violation-item">
+                <h4>Meaningful Hearing</h4>
+                <p>Court's failure to inquire into disputed facts deprived defendant of constitutional protections.</p>
+              </div>
             </div>
           </div>
           <button class="dropdown-toggle" onclick="toggleDropdown('violations-dropdown')">Show More</button>
@@ -1221,6 +1260,15 @@
       const button = dropdown.previousElementSibling;
       button.textContent = dropdown.classList.contains('active') ? 'Show Less' : 'Show More';
     }
+
+    // Duplicate marquee content for seamless looping
+    document.addEventListener('DOMContentLoaded', () => {
+      const marquee = document.querySelector('.violations-marquee');
+      if (marquee) {
+        const items = marquee.innerHTML;
+        marquee.innerHTML += items; // Duplicate content
+      }
+    });
   </script>
 </body>
 </html>
