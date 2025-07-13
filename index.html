@@ -61,7 +61,7 @@
       font-size: 24px;
       font-weight: 500;
       letter-spacing: -0.02em;
-      color: var(--primary-color); /* Red logo */
+      color: var(--primary-color);
     }
 
     .main-nav {
@@ -158,6 +158,33 @@
       background: #f0f0f0;
       margin: 40px auto;
       max-width: 1200px;
+    }
+
+    /* Dropdown Toggle */
+    .dropdown-toggle {
+      background: none;
+      border: none;
+      color: var(--primary-color);
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 8px 0;
+      display: inline-block;
+      transition: color 0.2s ease;
+    }
+
+    .dropdown-toggle:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+
+    .dropdown-content.active {
+      max-height: 1000px; /* Adjust as needed */
     }
 
     @media (max-width: 768px) {
@@ -261,6 +288,8 @@
     .section-content {
       max-width: 800px;
       margin-left: auto;
+      display: grid;
+      gap: 24px;
     }
 
     .lead-paragraph {
@@ -291,6 +320,9 @@
       margin: 32px 0;
       font-size: 16px;
       color: var(--text-secondary);
+      min-height: 120px;
+      display: flex;
+      align-items: center;
     }
 
     .principle-box {
@@ -298,6 +330,9 @@
       padding: 40px;
       border-radius: 4px;
       margin: 48px 0;
+      min-height: 200px;
+      display: grid;
+      align-content: start;
     }
 
     .principle-box h4 {
@@ -334,7 +369,7 @@
     /* Case Comparison */
     .case-comparison {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 48px;
       margin: 48px 0;
     }
@@ -342,6 +377,9 @@
     .opinion {
       padding: 32px;
       border-radius: 4px;
+      min-height: 200px;
+      display: grid;
+      align-content: start;
     }
 
     .opinion.majority {
@@ -377,6 +415,9 @@
       padding: 32px;
       background: #f8f8f8;
       border-radius: 4px;
+      min-height: 180px;
+      display: grid;
+      align-content: start;
     }
 
     .violation-item h4 {
@@ -404,6 +445,9 @@
       padding: 32px;
       background: #f8f8f8;
       border-radius: 4px;
+      min-height: 220px;
+      display: grid;
+      align-content: start;
     }
 
     .ref-number {
@@ -491,6 +535,9 @@
     .concept-item {
       text-align: center;
       padding: 40px 20px;
+      min-height: 240px;
+      display: grid;
+      align-content: start;
     }
 
     .concept-icon {
@@ -540,6 +587,9 @@
       padding: 48px;
       background: #f8f8f8;
       border-radius: 4px;
+      min-height: 300px;
+      display: grid;
+      align-content: start;
     }
 
     .case-timeline h4 {
@@ -608,6 +658,9 @@
       background: #f8f8f8;
       border-radius: 4px;
       text-align: center;
+      min-height: 300px;
+      display: grid;
+      align-content: start;
     }
 
     .amendment-grid {
@@ -622,6 +675,9 @@
       border-radius: 4px;
       border: 1px solid #e0e0e0;
       background: var(--background);
+      min-height: 180px;
+      display: grid;
+      align-content: start;
     }
 
     .amendment-number {
@@ -706,17 +762,14 @@
       }
 
       .violations-grid,
-      .publications-grid {
+      .publications-grid,
+      .concept-grid,
+      .amendment-grid {
         grid-template-columns: 1fr;
       }
 
       .visual-section {
         padding: 60px 20px;
-      }
-
-      .concept-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
       }
 
       .case-timeline {
@@ -874,20 +927,23 @@
             "Kafkaesque"—a term courts use to describe proceedings "totally lacking in notice and a meaningful
             opportunity to be heard."
           </p>
-          <p>
-            I cannot agree as would justify an arrest or conviction. On the contrary, I think that the policeman's action was a "deliberate defiance" 
-            of ordinary official duty as well as of the constitutional right of free speech. For at least where time allows, courtesy and explanation of 
-            commands are basic elements of good official conduct in a democratic society. Here petitioner was "asked" then "told" then "commanded" to stop 
-            speaking, but a man making a lawful address is certainly not required to be silent merely [340 U.S. 315, 328] because an officer directs it. 
-            Petitioner was entitled to know why he should cease doing a lawful act. Not once was he told. I understand that people in authoritarian countries 
-            must obey arbitrary orders. I had hoped that there was no such duty in the United States. In my judgment, today's holding means that as a practical matter, minority speakers can be silenced in any city. Hereafter, despite the First and Fourteenth Amendments, the policeman's club can take heavy toll of a current administration's public critics. Criticism of public officials will be too dangerous for all but the most courageous. This is true regardless of the fact that in [340 U.S. 315, 329] two other cases decided this day, Kunz v. New York, 340 U.S. 290 ; Niemotko v. Maryland, 340 U.S. 268 , a majority, in obedience to past decisions of this Court, provides a theoretical safeguard for freedom of speech. For whatever is thought to be guaranteed in Kunz and Niemotko is taken away by what is done here. The three cases read together mean that while previous restraints probably cannot be imposed on an unpopular speaker, the police have discretion to silence him as soon as the customary hostility to his views develops.
-          </p>
-          <p>
-            In the realm of religious faith, and in that of political belief, sharp differences arise. In both fields the tenets of one man may seem the rankest error to his neighbor. 
-            To persuade others to his own point of view, the pleader, as we know, at times, resorts to exaggeration, to vilification of men who have been, or are, prominent in church or state, and even to false statement. 
-            But the people of this nation have ordained in the light of history, that, in spite of the probability of excesses and abuses, these liberties are, in the long view, essential to enlightened opinion and right 
-            conduct on the part of the citizens of a democracy." Cantwell v. Connecticut, 310 U.S. 296, 310 
-          </p>
+          <button class="dropdown-toggle" onclick="toggleDropdown('introduction-dropdown')">Show More</button>
+          <div id="introduction-dropdown" class="dropdown-content">
+            <p>
+              I cannot agree as would justify an arrest or conviction. On the contrary, I think that the policeman's action was a "deliberate defiance" 
+              of ordinary official duty as well as of the constitutional right of free speech. For at least where time allows, courtesy and explanation of 
+              commands are basic elements of good official conduct in a democratic society. Here petitioner was "asked" then "told" then "commanded" to stop 
+              speaking, but a man making a lawful address is certainly not required to be silent merely [340 U.S. 315, 328] because an officer directs it. 
+              Petitioner was entitled to know why he should cease doing a lawful act. Not once was he told. I understand that people in authoritarian countries 
+              must obey arbitrary orders. I had hoped that there was no such duty in the United States. In my judgment, today's holding means that as a practical matter, minority speakers can be silenced in any city. Hereafter, despite the First and Fourteenth Amendments, the policeman's club can take heavy toll of a current administration's public critics. Criticism of public officials will be too dangerous for all but the most courageous. This is true regardless of the fact that in [340 U.S. 315, 329] two other cases decided this day, Kunz v. New York, 340 U.S. 290 ; Niemotko v. Maryland, 340 U.S. 268 , a majority, in obedience to past decisions of this Court, provides a theoretical safeguard for freedom of speech. For whatever is thought to be guaranteed in Kunz and Niemotko is taken away by what is done here. The three cases read together mean that while previous restraints probably cannot be imposed on an unpopular speaker, the police have discretion to silence him as soon as the customary hostility to his views develops.
+            </p>
+            <p>
+              In the realm of religious faith, and in that of political belief, sharp differences arise. In both fields the tenets of one man may seem the rankest error to his neighbor. 
+              To persuade others to his own point of view, the pleader, as we know, at times, resorts to exaggeration, to vilification of men who have been, or are, prominent in church or state, and even to false statement. 
+              But the people of this nation have ordained in the light of history, that, in spite of the probability of excesses and abuses, these liberties are, in the long view, essential to enlightened opinion and right 
+              conduct on the part of the citizens of a democracy." Cantwell v. Connecticut, 310 U.S. 296, 310 
+            </p>
+          </div>
           <div class="legal-note">
             <strong>Note:</strong> The term "Kafkaesque" refers to a situation marked by surreal complexity and
             bureaucratic irrationality, often used in legal contexts to highlight procedural injustices.
@@ -973,32 +1029,17 @@
               <p>
                 I cannot agree as would justify an arrest or conviction for disorderly conduct. On the contrary, I
                 think that the policeman's action was a "deliberate defiance" of ordinary official duty as well as
-                of the constitutional right of free speech. For at least where time allows, courtesy and explanation
-                of commands are basic elements of good official conduct in a democratic society. Here petitioner was
-                "asked" then "told" then "commanded" to stop speaking, but a man making a lawful address is certainly
-                not required to be silent merely [340 U.S. 315, 328] because an officer directs it. Petitioner was
-                entitled to know why he should cease doing a lawful act. Not once was he told. I understand that
-                people in authoritarian countries must obey arbitrary orders. I had hoped that there was no such duty
-                in the United States. In my judgment, today's holding means that as a practical matter, minority
-                speakers can be silenced in any city. Hereafter, despite the First and Fourteenth Amendments, the
-                policeman's club can take heavy toll of a current administration's public critics. Criticism of public
-                officials will be too dangerous for all but the most courageous. This is true regardless of the fact
-                that in [340 U.S. 315, 329] two other cases decided this day, Kunz v. New York, 340 U.S. 290 ;
-                Niemotko v. Maryland, 340 U.S. 268, a majority, in obedience to past decisions of this Court,
-                provides a theoretical safeguard for freedom of speech. For whatever is thought to be guaranteed in
-                Kunz and Niemotko is taken away by what is done here. The three cases read together mean that while
-                previous restraints probably cannot be imposed on an unpopular speaker, the police have discretion
-                to silence him as soon as the customary hostility to his views develops.
+                of the constitutional right of free speech.
               </p>
-              <p>
-                "In the realm of religious faith, and in that of political belief, sharp differences arise. In both
-                fields the tenets of one man may seem the rankest error to his neighbor. To persuade others to his
-                own point of view, the pleader, as we know, at times, resorts to exaggeration, to vilification of
-                men who have been, or are, prominent in church or state, and even to false statement. But the people
-                of this nation have ordained in the light of history, that, in spite of the probability of excesses
-                and abuses, these liberties are, in the long view, essential to enlightened opinion and right
-                conduct on the part of the citizens of a democracy." <em>Cantwell v. Connecticut, 310 U.S. 296, 310</em>
-              </p>
+              <button class="dropdown-toggle" onclick="toggleDropdown('dissent-dropdown')">Show More</button>
+              <div id="dissent-dropdown" class="dropdown-content">
+                <p>
+                  For at least where time allows, courtesy and explanation of commands are basic elements of good official conduct in a democratic society. Here petitioner was "asked" then "told" then "commanded" to stop speaking, but a man making a lawful address is certainly not required to be silent merely [340 U.S. 315, 328] because an officer directs it. Petitioner was entitled to know why he should cease doing a lawful act. Not once was he told. I understand that people in authoritarian countries must obey arbitrary orders. I had hoped that there was no such duty in the United States. In my judgment, today's holding means that as a practical matter, minority speakers can be silenced in any city. Hereafter, despite the First and Fourteenth Amendments, the policeman's club can take heavy toll of a current administration's public critics. Criticism of public officials will be too dangerous for all but the most courageous. This is true regardless of the fact that in [340 U.S. 315, 329] two other cases decided this day, Kunz v. New York, 340 U.S. 290 ; Niemotko v. Maryland, 340 U.S. 268, a majority, in obedience to past decisions of this Court, provides a theoretical safeguard for freedom of speech. For whatever is thought to be guaranteed in Kunz and Niemotko is taken away by what is done here. The three cases read together mean that while previous restraints probably cannot be imposed on an unpopular speaker, the police have discretion to silence him as soon as the customary hostility to his views develops.
+                </p>
+                <p>
+                  "In the realm of religious faith, and in that of political belief, sharp differences arise. In both fields the tenets of one man may seem the rankest error to his neighbor. To persuade others to his own point of view, the pleader, as we know, at times, resorts to exaggeration, to vilification of men who have been, or are, prominent in church or state, and even to false statement. But the people of this nation have ordained in the light of history, that, in spite of the probability of excesses and abuses, these liberties are, in the long view, essential to enlightened opinion and right conduct on the part of the citizens of a democracy." <em>Cantwell v. Connecticut, 310 U.S. 296, 310</em>
+                </p>
+              </div>
             </div>
           </div>
           <div class="case-timeline">
@@ -1065,19 +1106,22 @@
               <p>Court's failure to inquire into disputed facts deprived defendant of constitutional protections.</p>
             </div>
           </div>
-          <p>
-            The right to procedural due process is considered "absolute" in that it does not depend upon the merits of a
-            claimant's substantive assertions, and its observance is critical to organized society. It has been established
-            that the denial of procedural due process should be actionable for nominal damages without proof of actual injury.
-            Specifically, the Court has held that if, upon remand, it is determined that respondents' suspensions were
-            justified, they are nevertheless entitled to recover nominal damages not to exceed one dollar from petitioners
-            [Id. at 266-267 (citation omitted)]. Thus, even if the plaintiffs would have been suspended had they received due
-            process, they may recover nominal damages based on the denial of due process. However, this does not imply that a
-            person can incur "harm" under the Due Process Clause absent a deprivation of property. Damages under the Due
-            Process Clause are contingent upon a deprivation of property, as noted in <em>Board of Regents of State Colleges
-            v. Roth, 408 U.S. 564, 576</em> (1972), where the Fourteenth Amendment's procedural protection of property is
-            described as a safeguard of the security of interests already acquired in specific benefits.
-          </p>
+          <button class="dropdown-toggle" onclick="toggleDropdown('violations-dropdown')">Show More</button>
+          <div id="violations-dropdown" class="dropdown-content">
+            <p>
+              The right to procedural due process is considered "absolute" in that it does not depend upon the merits of a
+              claimant's substantive assertions, and its observance is critical to organized society. It has been established
+              that the denial of procedural due process should be actionable for nominal damages without proof of actual injury.
+              Specifically, the Court has held that if, upon remand, it is determined that respondents' suspensions were
+              justified, they are nevertheless entitled to recover nominal damages not to exceed one dollar from petitioners
+              [Id. at 266-267 (citation omitted)]. Thus, even if the plaintiffs would have been suspended had they received due
+              process, they may recover nominal damages based on the denial of due process. However, this does not imply that a
+              person can incur "harm" under the Due Process Clause absent a deprivation of property. Damages under the Due
+              Process Clause are contingent upon a deprivation of property, as noted in <em>Board of Regents of State Colleges
+              v. Roth, 408 U.S. 564, 576</em> (1972), where the Fourteenth Amendment's procedural protection of property is
+              described as a safeguard of the security of interests already acquired in specific benefits.
+            </p>
+          </div>
           <div class="amendment-visual">
             <h4>Constitutional Foundations</h4>
             <div class="amendment-grid">
@@ -1169,6 +1213,13 @@
       // Close mobile menu after clicking a link
       const mobileMenu = document.querySelector('.mobile-menu');
       mobileMenu.classList.remove('active');
+    }
+
+    function toggleDropdown(dropdownId) {
+      const dropdown = document.getElementById(dropdownId);
+      dropdown.classList.toggle('active');
+      const button = dropdown.previousElementSibling;
+      button.textContent = dropdown.classList.contains('active') ? 'Show Less' : 'Show More';
     }
   </script>
 </body>
