@@ -20,8 +20,8 @@
       --text-primary: #1a1a1a; /* Black */
       --text-secondary: #999; /* Grey */
       --background-gradient: linear-gradient(135deg, #f5e0e0, #a3bffa); /* Base gradient */
-      --glass-base: rgba(255, 255, 255, 0.9); /* Base glass shade */
-      --glass-layer: rgba(255, 255, 255, 0.7); /* Subtle layer shade */
+      --glass-translucent: rgba(255, 255, 255, 0.3); /* Highly translucent glass effect */
+      --border-color: rgba(224, 224, 224, 0.5); /* Subtle border color */
     }
 
     * {
@@ -50,10 +50,11 @@
 
     .hero-content {
       max-width: 800px;
-      background: var(--glass-base);
       padding: 40px;
-      border-radius: 12px;
+      border: 1px solid var(--border-color);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      background: var(--glass-translucent);
     }
 
     .hero-title {
@@ -96,10 +97,10 @@
       max-width: 800px;
       margin: 40px auto;
       padding: 30px;
-      background: var(--glass-layer);
-      border-radius: 12px;
+      border: 1px solid var(--border-color);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(5px); /* Subtle glass effect */
+      border-radius: 8px;
+      background: var(--glass-translucent);
     }
 
     .content-section:last-child {
@@ -136,7 +137,7 @@
     }
 
     .section-content mark {
-      background: rgba(240, 240, 240, 0.5);
+      background: rgba(240, 240, 240, 0.3);
       padding: 2px 4px;
       border-radius: 4px;
     }
@@ -151,13 +152,14 @@
     .violation-item {
       flex: 0 0 280px;
       padding: 20px;
-      background: var(--glass-base);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
       min-height: 180px;
       margin-right: 20px;
       display: grid;
       align-content: start;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      background: var(--glass-translucent);
     }
 
     .violation-item h4 {
@@ -186,16 +188,17 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: rgba(224, 224, 224, 0.5);
+      background: var(--border-color);
     }
 
     .timeline-item {
       position: relative;
       padding: 20px 20px 20px 40px;
       margin-bottom: 30px;
-      background: var(--glass-base);
-      border-radius: 8px;
+      border: 1px solid var(--border-color);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      background: var(--glass-translucent);
     }
 
     .timeline-marker {
@@ -204,7 +207,7 @@
       top: 20px;
       width: 12px;
       height: 12px;
-      background: var(--glass-layer);
+      background: var(--glass-translucent);
       border: 2px solid var(--primary-color);
       border-radius: 50%;
     }
@@ -232,13 +235,13 @@
 
     .amendment-item {
       padding: 20px;
+      border: 1px solid var(--border-color);
       border-radius: 8px;
-      border: 1px solid rgba(224, 224, 224, 0.3);
-      background: var(--glass-layer);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      background: var(--glass-translucent);
       min-height: 160px;
       display: grid;
       align-content: start;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .amendment-number {
@@ -271,12 +274,13 @@
 
     .publication-item {
       padding: 20px;
-      background: var(--glass-base);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       border-radius: 8px;
       min-height: 200px;
       display: grid;
       align-content: start;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      background: var(--glass-translucent);
     }
 
     .ref-number {
