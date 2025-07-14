@@ -19,9 +19,11 @@
       --primary-color: #e61428; /* Pentagram red */
       --text-primary: #1a1a1a; /* Black */
       --text-secondary: #999; /* Grey */
-      --base-background: #f0f0f5; /* Opaque base color simulating background */
+      --base-background: #f0f0f5; /* Opaque base color */
       --glass-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)); /* Translucent overlay */
-      --border-color: rgba(224, 224, 224, 0.7); /* Subtle border color */
+      --stroke-color: #f3ebee; /* Stroke color from interface */
+      --box-opacity: 0.46; /* 46% opacity from interface */
+      --stroke-opacity: 0.92; /* 92% opacity for stroke */
     }
 
     * {
@@ -67,10 +69,10 @@
     .hero-content {
       max-width: 800px;
       padding: 40px;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
+      border-radius: 17px; /* Matching corner radius from interface */
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
     }
 
     .hero-title {
@@ -113,10 +115,10 @@
       max-width: 800px;
       margin: 40px auto;
       padding: 30px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
+      border-radius: 17px; /* Matching corner radius from interface */
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
       position: relative;
       z-index: 1;
     }
@@ -170,14 +172,14 @@
     .violation-item {
       flex: 0 0 280px;
       padding: 20px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
+      border-radius: 17px; /* Matching corner radius from interface */
       min-height: 180px;
       margin-right: 20px;
       display: grid;
       align-content: start;
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .violation-item h4 {
@@ -206,17 +208,17 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: var(--border-color);
+      background: rgba(var(--stroke-color), var(--stroke-opacity));
     }
 
     .timeline-item {
       position: relative;
       padding: 20px 20px 20px 40px;
       margin-bottom: 30px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
+      border-radius: 17px; /* Matching corner radius from interface */
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .timeline-marker {
@@ -225,7 +227,7 @@
       top: 20px;
       width: 12px;
       height: 12px;
-      background: rgba(255, 255, 255, 0.5);
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01)));
       border: 2px solid var(--primary-color);
       border-radius: 50%;
     }
@@ -253,10 +255,10 @@
 
     .amendment-item {
       padding: 20px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
+      border-radius: 17px; /* Matching corner radius from interface */
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
       min-height: 160px;
       display: grid;
       align-content: start;
@@ -292,10 +294,10 @@
 
     .publication-item {
       padding: 20px;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.5);
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
+      border-radius: 17px; /* Matching corner radius from interface */
+      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
       min-height: 200px;
       display: grid;
       align-content: start;
