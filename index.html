@@ -19,7 +19,7 @@
       --primary-color: #e61428; /* Pentagram red */
       --text-primary: #1a1a1a; /* Black */
       --text-secondary: #999; /* Grey */
-      --base-background: #f0f0f5; /* Opaque base color */
+      --base-background: #f0f0f5; /* Opaque base color matching box background */
       --glass-overlay: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4)); /* Translucent overlay */
       --stroke-color: #f3ebee; /* Stroke color from interface */
       --box-opacity: 0.46; /* 46% opacity from interface */
@@ -71,8 +71,9 @@
       padding: 40px;
       border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
       border-radius: 17px; /* Matching corner radius from interface */
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      background: var(--base-background); /* Match page background */
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.1);
+      opacity: var(--box-opacity); /* Apply 46% opacity */
     }
 
     .hero-title {
@@ -117,8 +118,9 @@
       padding: 30px;
       border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
       border-radius: 17px; /* Matching corner radius from interface */
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      background: var(--base-background); /* Match page background */
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+      opacity: var(--box-opacity); /* Apply 46% opacity */
       position: relative;
       z-index: 1;
     }
@@ -178,8 +180,9 @@
       margin-right: 20px;
       display: grid;
       align-content: start;
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      background: var(--base-background); /* Match page background */
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+      opacity: var(--box-opacity); /* Apply 46% opacity */
     }
 
     .violation-item h4 {
@@ -217,8 +220,9 @@
       margin-bottom: 30px;
       border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
       border-radius: 17px; /* Matching corner radius from interface */
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      background: var(--base-background); /* Match page background */
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+      opacity: var(--box-opacity); /* Apply 46% opacity */
     }
 
     .timeline-marker {
@@ -227,9 +231,10 @@
       top: 20px;
       width: 12px;
       height: 12px;
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01)));
+      background: var(--base-background); /* Match page background */
       border: 2px solid var(--primary-color);
       border-radius: 50%;
+      opacity: var(--box-opacity); /* Apply 46% opacity */
     }
 
     .timeline-date {
@@ -257,11 +262,12 @@
       padding: 20px;
       border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
       border-radius: 17px; /* Matching corner radius from interface */
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      background: var(--base-background); /* Match page background */
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
       min-height: 160px;
       display: grid;
       align-content: start;
+      opacity: var(--box-opacity); /* Apply 46% opacity */
     }
 
     .amendment-number {
@@ -296,11 +302,12 @@
       padding: 20px;
       border: 1px solid rgba(var(--stroke-color), var(--stroke-opacity));
       border-radius: 17px; /* Matching corner radius from interface */
-      background: linear-gradient(rgba(255, 255, 255, var(--box-opacity)), rgba(255, 255, 255, calc(var(--box-opacity) - 0.01))); /* 1% gradient difference */
+      background: var(--base-background); /* Match page background */
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
       min-height: 200px;
       display: grid;
       align-content: start;
+      opacity: var(--box-opacity); /* Apply 46% opacity */
     }
 
     .ref-number {
