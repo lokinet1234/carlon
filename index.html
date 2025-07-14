@@ -19,7 +19,7 @@
       --primary-color: #e61428; /* Pentagram red */
       --text-primary: #1a1a1a; /* Black */
       --text-secondary: #999; /* Grey */
-      --background: #fff; /* White */
+      --background-gradient: linear-gradient(135deg, #f5e0e0, #a3bffa); /* Gradient for glass effect */
     }
 
     * {
@@ -32,7 +32,7 @@
       font-family: 'Monument Grotesk', sans-serif;
       line-height: 1.6;
       color: var(--text-primary);
-      background: var(--background);
+      background: var(--background-gradient);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
@@ -44,7 +44,6 @@
       justify-content: center;
       text-align: center;
       padding: 0 20px;
-      background: var(--background);
     }
 
     .hero-content {
@@ -91,6 +90,8 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       border-bottom: 1px solid #e0e0e0;
     }
 
@@ -143,7 +144,7 @@
     .violation-item {
       flex: 0 0 280px;
       padding: 20px;
-      background: #f8f8f8;
+      background: rgba(248, 248, 248, 0.8);
       border-radius: 4px;
       min-height: 160px;
       margin-right: 16px;
@@ -184,6 +185,9 @@
       position: relative;
       padding-left: 40px;
       margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 12px;
+      border-radius: 4px;
     }
 
     .timeline-marker {
@@ -192,7 +196,7 @@
       top: 6px;
       width: 12px;
       height: 12px;
-      background: var(--background);
+      background: var(--background-gradient);
       border: 2px solid var(--primary-color);
       border-radius: 50%;
     }
@@ -222,7 +226,7 @@
       padding: 16px;
       border-radius: 4px;
       border: 1px solid #e0e0e0;
-      background: var(--background);
+      background: rgba(255, 255, 255, 0.8);
       min-height: 140px;
       display: grid;
       align-content: start;
@@ -258,7 +262,7 @@
 
     .publication-item {
       padding: 16px;
-      background: #f8f8f8;
+      background: rgba(248, 248, 248, 0.8);
       border-radius: 4px;
       min-height: 180px;
       display: grid;
